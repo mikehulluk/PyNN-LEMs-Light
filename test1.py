@@ -48,32 +48,6 @@ from pyNN.lemslite import *
 #write_xml()
 
 
-#
-#+----------------+-----------------------+
-#| Old Population |      New location     |
-#+----------------+-----------------------+
-#| (False, 'MN')  |  ('NondINs', 0, 169)  |
-#| (False, 'RB')  |  ('NondINs', 169, 63) |
-#| (False, 'aIN') |  ('NondINs', 232, 68) |
-#| (False, 'cIN') | ('NondINs', 300, 192) |
-#| (False, 'dIN') |    ('dINs', 0, 118)   |
-#| (False, 'dla') |  ('NondINs', 492, 29) |
-#| (False, 'dlc') |  ('NondINs', 521, 52) |
-#|  (True, 'MN')  | ('NondINs', 573, 169) |
-#|  (True, 'RB')  |  ('NondINs', 742, 63) |
-#| (True, 'aIN')  |  ('NondINs', 805, 68) |
-#| (True, 'cIN')  | ('NondINs', 873, 192) |
-#| (True, 'dIN')  |   ('dINs', 118, 118)  |
-#| (True, 'dla')  | ('NondINs', 1065, 29) |
-#| (True, 'dlc')  | ('NondINs', 1094, 52) |
-#+----------------+-----------------------+
-#+------------+-------+
-#| Population | Count |
-#+------------+-------+
-#|  NondINs   |  1146 |
-#|    dINs    |  236  |
-#+------------+-------+
-#
 
 
 
@@ -99,13 +73,14 @@ RHS_dlc = non_dINs[ 1094: 1094+52]
 LHS_dIN = dINs[ 0: 118]
 RHS_dIN = dINs[ 118: 236]
 
+LHS_hdIN = dINs[0:50]
+RHS_hdIN = dINs[0+118:50+118]
 
 
 # Connect input to RB cells:
 projection1 = EventProjection(rb_input, LHS_RB, FromListConnector([]), delay = 'fixed:2e-3',
                         src_portname="on_emit_event",
                         dst_portname="on_recv_ampa_event", portmap = {'weight': 'fixed:10.0' })
-
 
 
 #| ('NondINs', 'NondINs', ('ampa', 0.593)) |  1175 |
@@ -166,8 +141,6 @@ projection1 = EventProjection(dINs, non_dINs, FromListConnector([]), delay = 'fi
 
 
 # Gap junctions:
-LHS_hdIN = dINs[0:50]
-RHS_hdIN = dINs[0+118:50+118]
 projection3 = AnalogProjection(LHS_hdIN,LHS_hdIN,
                         FixedProbabilityConnector(0.2),
                         joining_component='gap_junction.xml',
@@ -179,7 +152,6 @@ projection3 = AnalogProjection(LHS_hdIN,LHS_hdIN,
                             'joining_component:i2':      'pop2:i_inj',
                         })
 
-#projection3 = AnalogProjection(dINs[0+118:50+118], dINs[0+118:50+118],
 projection3 = AnalogProjection(RHS_hdIN,RHS_hdIN,
                         FixedProbabilityConnector(0.2),
                         joining_component='gap_junction.xml',

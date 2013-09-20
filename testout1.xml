@@ -1,149 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
+<lemslite_network>
 
-<!-- Populations --> 
-<populations>
-  <population size="5" label="input" id="id000" component_name="rb_spike_gen.xml"/>
-  <population size="236" label="dINs" id="id001" component_name="din.xml"/>
-  <population size="1146" label="Non-dINs" id="id002" component_name="non_din.xml"/>
-</populations>
-<populationviews>
-  <population_view stride="1" src_population="id001" stop_index="214" id="id003" start_index="165"/>
-  <population_view stride="1" src_population="id001" stop_index="96" id="id004" start_index="47"/>
-  <population_view stride="1" src_population="id002" stop_index="514" id="id005" start_index="452"/>
-</populationviews>
-<assemblies>
-</assemblies>
+  <!-- Populations --> 
+  <component_arrays>
+    <component_array size="5" label="input" id="id000" component_name="rb_spike_gen.xml"/>
+    <component_array size="236" label="dINs" id="id001" component_name="din.xml"/>
+    <component_array size="1146" label="Non-dINs" id="id002" component_name="non_din.xml"/>
+  </component_arrays>
+  <component_array_slices>
+    <component_array_slice stride="1" of="id001" id="id003" frm="165" to="214"/>
+    <component_array_slice stride="1" of="id002" id="id004" frm="452" to="514"/>
+    <component_array_slice stride="1" of="id001" id="id005" frm="47" to="96"/>
+  </component_array_slices>
+  <assemblies>
+  </assemblies>
 
-<!-- Event Projections --> 
-<event_projections>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id005" id="id006" src_portname="on_emit_event" src_pop="id000" label="None">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:10.0"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id007" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.593"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id008" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:8.0"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_inh_event" dst_pop="id002" id="id009" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (inh)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.435"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id002" id="id010" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (nmda)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.29"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id001" id="id011" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.593"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_inh_event" dst_pop="id001" id="id012" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (inh)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.435"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id001" id="id013" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (nmda)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.29"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id001" id="id014" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (nmda)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:1.0"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id015" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.1"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id016" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.593"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id017" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.593"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-  <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id002" id="id018" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (nmda)">
-    <parameter_map>
-      <connect dst_param="weight" value="fixed:0.15"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FromListConnector connections="[]"/>
-    </connector>
-  </event_projection>
-</event_projections>
+  <!-- Event Projections --> 
+  <event_projections>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id004" id="id006" src_portname="on_emit_event" src_pop="id000" label="None">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:10.0"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id007" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.593"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id008" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:8.0"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_inh_event" dst_pop="id002" id="id009" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (inh)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.435"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id002" id="id010" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;non_dINs (nmda)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.29"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id001" id="id011" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.593"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_inh_event" dst_pop="id001" id="id012" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (inh)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.435"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id001" id="id013" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (nmda)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.29"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id001" id="id014" src_portname="on_emit_event" src_pop="id002" label="non_dINs-&gt;dINs (nmda)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:1.0"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id015" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.1"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id016" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.593"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_ampa_event" dst_pop="id002" id="id017" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (ampa)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.593"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+    <event_projection delay="fixed:2e-3" dst_portname="on_recv_nmda_event" dst_pop="id002" id="id018" src_portname="on_emit_event" src_pop="id001" label="dINs-&gt;non_dINs (nmda)">
+      <parameter_map>
+        <connect dst_param="weight" value="fixed:0.15"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FromListConnector connections="[]"/>
+      </connector>
+    </event_projection>
+  </event_projections>
 
-<!-- Analog Projections --> 
-<analog_projections>
-  <analog_projection src_pop="id004" joining_component="gap_junction.xml" id="id019" dst_pop="id004" label="None">
-    <parameter_map>
-      <connect dst_param="joining_component:i1" value="pop1:i_inj"/>
-      <connect dst_param="joining_component:i2" value="pop2:i_inj"/>
-      <connect dst_param="joining_component:V1" value="pop1:V"/>
-      <connect dst_param="joining_component:V2" value="pop2:V"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FixedProbabilityConnector p_connect="0.2"/>
-    </connector>
-  </analog_projection>
-  <analog_projection src_pop="id003" joining_component="gap_junction.xml" id="id020" dst_pop="id003" label="None">
-    <parameter_map>
-      <connect dst_param="joining_component:i1" value="pop1:i_inj"/>
-      <connect dst_param="joining_component:i2" value="pop2:i_inj"/>
-      <connect dst_param="joining_component:V1" value="pop1:V"/>
-      <connect dst_param="joining_component:V2" value="pop2:V"/>
-    </parameter_map>
-    <connector>
-      <PyNN:FixedProbabilityConnector p_connect="0.2"/>
-    </connector>
-  </analog_projection>
-</analog_projections>
+  <!-- Analog Projections --> 
+  <analog_projections>
+    <analog_projection src_pop="id005" joining_component="gap_junction.xml" id="id019" dst_pop="id005" label="None">
+      <parameter_map>
+        <connect dst_param="joining_component:i1" value="pop1:i_inj"/>
+        <connect dst_param="joining_component:i2" value="pop2:i_inj"/>
+        <connect dst_param="joining_component:V1" value="pop1:V"/>
+        <connect dst_param="joining_component:V2" value="pop2:V"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FixedProbabilityConnector p_connect="0.2"/>
+      </connector>
+    </analog_projection>
+    <analog_projection src_pop="id003" joining_component="gap_junction.xml" id="id020" dst_pop="id003" label="None">
+      <parameter_map>
+        <connect dst_param="joining_component:i1" value="pop1:i_inj"/>
+        <connect dst_param="joining_component:i2" value="pop2:i_inj"/>
+        <connect dst_param="joining_component:V1" value="pop1:V"/>
+        <connect dst_param="joining_component:V2" value="pop2:V"/>
+      </parameter_map>
+      <connector>
+        <PyNN:FixedProbabilityConnector p_connect="0.2"/>
+      </connector>
+    </analog_projection>
+  </analog_projections>
+</lemslite_network>

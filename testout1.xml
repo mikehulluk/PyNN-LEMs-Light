@@ -11,9 +11,7 @@
 
   <!-- Event Projections --> 
   <event_connection_set source="id000:on_emit_event" target="id004:on_recv_ampa_event" id="id006" label="None">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:10.0"/>
     </parameter_map>
@@ -22,9 +20,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id002:on_recv_ampa_event" id="id007" label="non_dINs-&gt;non_dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.593"/>
     </parameter_map>
@@ -33,9 +29,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id002:on_recv_ampa_event" id="id008" label="non_dINs-&gt;non_dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:8.0"/>
     </parameter_map>
@@ -44,9 +38,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id002:on_recv_inh_event" id="id009" label="non_dINs-&gt;non_dINs (inh)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.435"/>
     </parameter_map>
@@ -55,9 +47,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id002:on_recv_nmda_event" id="id010" label="non_dINs-&gt;non_dINs (nmda)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.29"/>
     </parameter_map>
@@ -66,9 +56,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id001:on_recv_ampa_event" id="id011" label="non_dINs-&gt;dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.593"/>
     </parameter_map>
@@ -77,9 +65,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id001:on_recv_inh_event" id="id012" label="non_dINs-&gt;dINs (inh)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.435"/>
     </parameter_map>
@@ -88,9 +74,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id001:on_recv_nmda_event" id="id013" label="non_dINs-&gt;dINs (nmda)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.29"/>
     </parameter_map>
@@ -99,9 +83,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id002:on_emit_event" target="id001:on_recv_nmda_event" id="id014" label="non_dINs-&gt;dINs (nmda)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:1.0"/>
     </parameter_map>
@@ -110,9 +92,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id001:on_emit_event" target="id002:on_recv_ampa_event" id="id015" label="dINs-&gt;non_dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.1"/>
     </parameter_map>
@@ -121,9 +101,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id001:on_emit_event" target="id002:on_recv_ampa_event" id="id016" label="dINs-&gt;non_dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.593"/>
     </parameter_map>
@@ -132,9 +110,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id001:on_emit_event" target="id002:on_recv_ampa_event" id="id017" label="dINs-&gt;non_dINs (ampa)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.593"/>
     </parameter_map>
@@ -143,9 +119,7 @@
     </connector>
   </event_connection_set>
   <event_connection_set source="id001:on_emit_event" target="id002:on_recv_nmda_event" id="id018" label="dINs-&gt;non_dINs (nmda)">
-    <delay>
-      <FixedDelay delay="fixed:2e-3"/>
-    </delay>
+    <FixedDelay delay="fixed:2e-3"/>
     <parameter_map>
       <connect dst_param="weight" value="fixed:0.15"/>
     </parameter_map>
